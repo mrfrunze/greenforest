@@ -1,0 +1,94 @@
+.topHeader {
+  padding: 11px 0;
+  border-bottom: 1px solid #49ae4436;
+  background-color: #111; /* background for header */
+  position: relative;
+  z-index: 9;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.left {
+  display: flex;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.infoList {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.infoList li {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon {
+  color: #49af45;
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+.phone {
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.socialList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.socialList li a {
+  color: #fff;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.socialList li a:hover, 
+.phone:hover,
+.infoList li:hover {
+  color: #49af45;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .right {
+    gap: 16px;
+    justify-content: center;
+  }
+  .infoList {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

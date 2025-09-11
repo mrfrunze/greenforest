@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #49AF45;      /* button */
+  --color-primary-alt: #4CAF50;  /* background-color */
+  --color-accent: #4baf47;       /* text accent */
+  --color-white: #fff;           /* text white */
+  --color-title: #001819;        /* h1-h6 */
+  --color-paragraph: #868681;    /* paragraph */
+  --color-bg: #F6F6EE;           /* background */
+}
+
+
+
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-paragraph);
+  font-family: Arial, Helvetica, sans-serif;
+}

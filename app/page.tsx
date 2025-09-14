@@ -1,9 +1,10 @@
-import Image from "next/image";
+import Sliders from "@/components/hero/Sliders";
 
 export default function Home() {
   return (
-    <div className="">
-
-    </div>
+    <>
+      <Sliders/>
+      <section className="h-96"></section>
+    </>
   );
 }

@@ -1,20 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #49AF45;      /* button */
-  --color-primary-alt: #4CAF50;  /* background-color */
-  --color-accent: #4baf47;       /* text accent */
-  --color-white: #fff;           /* text white */
-  --color-title: #001819;        /* h1-h6 */
-  --color-paragraph: #868681;    /* paragraph */
-  --color-bg: #F6F6EE;           /* background */
+  --color-primary: #49AF45;
+  /* button */
+  --color-primary-alt: #4CAF50;
+  /* background-color */
+  --color-accent: #4baf47;
+  /* text accent */
+  --color-white: #fff;
+  /* text white */
+  --color-title: #001819;
+  /* h1-h6 */
+  --color-paragraph: #868681;
+  /* paragraph */
+  --color-bg: #F6F6EE;
+  /* background */
+  --header-bg-solid: color-mix(in srgb, #001819 88%, #49AF45 12%);
+   /* fallback if color-mix not supported */
+  --header-bg-solid-fallback: #0f2519;
+
+  /* translucent variant for over-hero state */
+  --header-bg-hero: color-mix(in srgb, var(--header-bg-solid) 75%, transparent);
+
+  /* subtle border tint from brand */
+  --header-border: color-mix(in srgb, #49AF45 22%, transparent);
 }
-
-
 
 
 body {
   background-color: var(--color-bg);
   color: var(--color-paragraph);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .header-main {
+    /* base bar */
+    @apply w-full transition-[background-color,box-shadow,transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)];
+  }
+
+  .header-inner {
+    @apply mx-auto w-full max-w-screen-xl px-4 flex items-center justify-between py-4;
+  }
+
+  .header-main--init {
+    background: var(--header-bg-hero);
+    @apply relative bg-transparent translate-y-0;
+  }
+
+  .header-main--fixed {
+    background: var(--header-bg-solid, var(--header-bg-solid-fallback));
+    @apply fixed inset-x-0 top-0 z-50 w-full shadow-md border-b border-white/10 translate-y-0;
+  }
+
+  .header-top {
+    @apply transition-all duration-300;
+  }
+
+  .header-top--hide {
+    @apply opacity-0 -translate-y-2 pointer-events-none;
+  }
+}
+
+/* Hero: vertical bullets at middle-right with ring on active */
+.hero-swiper .swiper .swiper-pagination {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  left: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;                /* like margin 18px in your Owl example */
+  width: auto;
+  z-index: 20;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: transparent;
+  border: 2px solid var(--color-primary);  /* #49AF45 */
+  opacity: 1;                              /* prevent Swiper fade */
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.hero-swiper .swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;                            
+  border: 2px solid var(--color-primary);
+  border-radius: 9999px;
+}
+
+/* small tweaks for mobile if needed */
+@media (max-width: 640px) {
+  .hero-swiper .swiper-pagination { right: 12px; gap: 12px; }
 }

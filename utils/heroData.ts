@@ -12,7 +12,7 @@ export type HeroSlide = {
 export const heroSlides: HeroSlide[] = [
   {
     id: "s1",
-    bg: "/images/home1/hero-bg-1.jpg",
+    bg: "/images/hero-bg.jpg",
     subtitle: "Natural Environment",
     line1: "Be Safe Controls",
     line2: "Environment",
@@ -22,7 +22,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "s2",
-    bg: "/images/home1/hero-bg2.jpg",
+    bg: "/images/hero-bg2.jpg",
     subtitle: "Natural Environment",
     line1: "Be Safe Controls",
     line2: "Environment",

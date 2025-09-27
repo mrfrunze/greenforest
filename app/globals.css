@@ -60,6 +60,18 @@ body {
   .header-top--hide {
     @apply opacity-0 -translate-y-2 pointer-events-none;
   }
+
+  .nav-mobile { /* mobile overlay */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    @apply absolute z-[3] top-[82px] left-0 w-full flex-col items-center py-0 px-4 gap-5;
+  }
+
+   .nav-collapse { 
+      @apply overflow-hidden transition-[height] duration-300;
+      height: var(--menu-h, 0px);
+    }
 }
 
 /* Hero: vertical bullets at middle-right with ring on active */
@@ -109,4 +121,12 @@ body {
 /* small tweaks for mobile if needed */
 @media (max-width: 640px) {
   .hero-swiper .swiper-pagination { right: 12px; gap: 12px; }
+}
+
+.aboutUs{
+  background: url(/images/about_bg.jpg) no-repeat center;
+}
+
+.footer{
+  background: url(/images/footer_bg.jpg) no-repeat center;
 }

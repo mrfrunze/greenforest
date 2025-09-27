@@ -4,6 +4,7 @@ import { Albert_Sans } from "next/font/google";
 import "./globals.css";
 import Loader from "@/components/loader/Loader";
 import Header from "@/components/header/Header";
+import Footer from "../components/footer/Footer";
 
 
 const albertSans = Albert_Sans({
@@ -25,7 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
+      <body 
+        suppressHydrationWarning
         className={`${albertSans.className} antialiased`}
       >
         <Loader/>
@@ -33,6 +35,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        <Footer/>
       </body>
     </html>
   );

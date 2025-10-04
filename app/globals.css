@@ -124,7 +124,7 @@ body {
 }
 
 .aboutUs{
-  background: url(/images/about_bg.jpg) no-repeat center;
+  background: url(/images/about-bg.jpg) no-repeat center/cover;
 }
 
 .footer{

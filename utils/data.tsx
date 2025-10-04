@@ -2,6 +2,14 @@ import { BsGeoAlt } from "react-icons/bs";
 import { BiEnvelopeOpen, BiPhone } from "react-icons/bi";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaPinterestP } from "react-icons/fa";
 
+export type ProductType = {
+  id: string;
+  title: string;
+  price: number;
+  image: string;
+  href?: string;
+};
+
 // Info list data
 export const infoList = [
   {
@@ -58,4 +66,10 @@ export const navLinks: NavItem[] = [
   { label: "Pages", href: "/pages" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+];
+
+export const products: ProductType[] = [
+  { id: "1", title: "Venik 1", price: 150, image: "/images/photo_5.jpg" },
+  { id: "2", title: "Green Venik 2", price: 75, image: "/images/photo_6.jpg" },
+  { id: "3", title: "Leaf Venik 3",    price: 375, image: "/images/photo_4.jpg" },
 ];

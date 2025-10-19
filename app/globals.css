@@ -16,7 +16,7 @@
   --color-bg: #F6F6EE;
   /* background */
   --header-bg-solid: color-mix(in srgb, #001819 88%, #49AF45 12%);
-   /* fallback if color-mix not supported */
+  /* fallback if color-mix not supported */
   --header-bg-solid-fallback: #0f2519;
 
   /* translucent variant for over-hero state */
@@ -36,7 +36,7 @@ body {
 @layer components {
   .header-main {
     /* base bar */
-    @apply w-full transition-[background-color,box-shadow,transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)];
+     @apply w-full transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)];
   }
 
   .header-inner {
@@ -61,17 +61,35 @@ body {
     @apply opacity-0 -translate-y-2 pointer-events-none;
   }
 
-  .nav-mobile { /* mobile overlay */
+  .nav-mobile {
+    /* mobile overlay */
     background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 700;
     @apply absolute z-[3] top-[82px] left-0 w-full flex-col items-center py-0 px-4 gap-5;
   }
 
-   .nav-collapse { 
-      @apply overflow-hidden transition-[height] duration-300;
-      height: var(--menu-h, 0px);
-    }
+  .nav-collapse {
+    @apply overflow-hidden transition-[height] duration-300;
+    height: var(--menu-h, 0px);
+  }
+
+  /* Green wave band behind product cards */
+  .products-band {
+    /* base color + wave pattern */
+    background-color: var(--color-primary);
+    background-image: url(/images/service_bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* spacing */
+    /* @apply relative isolation-isolate w-full py-10 md:py-16; */
+  }
+
+    .smooth-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
 }
 
 /* Hero: vertical bullets at middle-right with ring on active */
@@ -84,7 +102,8 @@ body {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 18px;                /* like margin 18px in your Owl example */
+  gap: 18px;
+  /* like margin 18px in your Owl example */
   width: auto;
   z-index: 20;
 }
@@ -95,8 +114,9 @@ body {
   height: 14px;
   border-radius: 9999px;
   background: transparent;
-  border: 2px solid var(--color-primary);  /* #49AF45 */
-  opacity: 1;                              /* prevent Swiper fade */
+  border: 2px solid var(--color-primary);
+  opacity: 1;
+  /* prevent Swiper fade */
 }
 
 .hero-swiper .swiper-pagination-bullet-active {
@@ -113,20 +133,23 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20px;
-  height: 20px;                            
+  height: 20px;
   border: 2px solid var(--color-primary);
   border-radius: 9999px;
 }
 
 /* small tweaks for mobile if needed */
 @media (max-width: 640px) {
-  .hero-swiper .swiper-pagination { right: 12px; gap: 12px; }
+  .hero-swiper .swiper-pagination {
+    right: 12px;
+    gap: 12px;
+  }
 }
 
-.aboutUs{
+.aboutUs {
   background: url(/images/about-bg.jpg) no-repeat center/cover;
 }
 
-.footer{
+.footer {
   background: url(/images/footer_bg.jpg) no-repeat center;
 }

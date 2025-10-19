@@ -12,11 +12,19 @@ type Props = {
 
 export default function ProductTile({ title, price, image, href = "#" }: Props) {
   return (
-    <article className="group relative rounded-xl border border-white/10 bg-[#0e0e0e] shadow-sm transition-transform duration-300 hover:-translate-y-0.5">
+    <article className="
+        group relative overflow-hidden rounded-2xl
+        border-[1px] border-[#a09b9b] bg-white
+        shadow-[0_1px_0_rgba(0,0,0,0.02)]
+        hover:[box-shadow:1px_0px_14px_1px_#ebebeb]
+        smooth-transition
+    ">
       {/* image */}
       <Link href={href} aria-label={title} className="block">
         {/* preserve aspect ratio */}
-        <div className="relative w-full overflow-hidden rounded-t-xl" style={{ aspectRatio: "4/3" }}>
+        <div className="relative w-full overflow-hidden rounded-t-xl" 
+          style={{ aspectRatio: "4/3" }}
+        >
           <Image
             src={image}
             alt={title}
@@ -27,11 +35,21 @@ export default function ProductTile({ title, price, image, href = "#" }: Props) 
           />
           {/* action bar: mobile visible, desktop on hover */}
           <div className="pointer-events-none absolute inset-0 flex items-start justify-end p-3">
-            <div className="pointer-events-auto flex gap-2 rounded-full bg-black/45 p-2 backdrop-blur-md md:opacity-0 md:transition-opacity md:duration-300 md:group-hover:opacity-100">
+            <div className="
+                pointer-events-auto flex gap-2 rounded-full bg-white/80 backdrop-blur
+                ring-1 ring-black/10
+                md:opacity-0 md:transition-opacity md:duration-300 md:group-hover:opacity-100
+            ">
               {/* wishlist */}
               <button
                 type="button"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white hover:border-[--color-primary] hover:text-[--color-primary] transition-colors"
+                className="
+                  inline-flex 
+                  h-9 
+                  w-9 
+                  items-center 
+                  justify-center 
+                  rounded-full text-[#001819] hover:text-[--color-primary] transition-colors"
                 aria-label="Add to wishlist"
               >
                 <FaHeart className="text-[16px]" />
@@ -39,7 +57,7 @@ export default function ProductTile({ title, price, image, href = "#" }: Props) 
               {/* add to cart */}
               <button
                 type="button"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white hover:border-[--color-primary] hover:text-[--color-primary] transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full text-[#001819] hover:text-[--color-primary] transition-colors"
                 aria-label="Add to cart"
               >
                 <FaShoppingCart className="text-[16px]" />
@@ -50,14 +68,14 @@ export default function ProductTile({ title, price, image, href = "#" }: Props) 
       </Link>
 
       {/* content */}
-      <div className="p-4">
+      <div className="border-t border-black/5 bg-[#F6F6EE] p-4">
         {/* title */}
-        <Link href={href} className="block text-base font-semibold text-white hover:text-[--color-primary] transition-colors">
+        <div className="font-bold text-[#49AF45] text-center text-3xl">
           {title}
-        </Link>
+        </div>
 
         {/* price */}
-        <div className="mt-2 text-[--color-primary] font-semibold">${price.toFixed(2)}</div>
+        <div className="mt-2 text-2xl font-semibold text-center">${price.toFixed(2)}</div>
       </div>
     </article>
   );

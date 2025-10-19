@@ -7,19 +7,18 @@ import { GiLeafSwirl } from "react-icons/gi";
 import { CiDeliveryTruck } from "react-icons/ci";
 
 
-
-
 const About = () => {
   return (
     <>
       <section className="aboutUs w-full px-4 py-24">
-        <div className="flex gap-10 justify-center">
-          <div className="relative flex-1">
+        <div className="flex flex-col md:flex-row gap-10 justify-center">
+          <div className="relative flex-1 aspect-[4/3] overflow-hidden rounded-lg">
             <Image
               src="/images/venoki-goteborg-2.jpg"
               alt="venoki-goteborg"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+             className="object-cover"
               priority
             />
           </div>
@@ -64,8 +63,8 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="feature w-full px-4 pb-24">
-        <div className="container flex justify-center gap-7">
+      <section className="feature w-full px-4 py-24">
+        <div className="container m-auto flex justify-center md:justify-between items-center flex-col md:flex-row gap-12">
             <div className="feature-single-block w-80 flex flex-col items-center gap-4">
                 <div className="feature-icon">
                     <FaHandHoldingHand className="text-[#49af45] text-[80px]"/>

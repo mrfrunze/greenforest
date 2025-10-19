@@ -29,4 +29,22 @@ export const heroSlides: HeroSlide[] = [
     desc: "Improve ecosystems with data-driven impact and sustainable actions.",
     primary: { label: "Let’s Talk", href: "/contact" },
   },
+  {
+    id: "s3",
+    bg: "/images/slider-img-1.jpg",
+    subtitle: "Natural Environment",
+    line1: "Be Safe Controls",
+    line2: "Environment",
+    desc: "Improve ecosystems with data-driven impact and sustainable actions.",
+    primary: { label: "Let’s Talk", href: "/contact" },
+  },
+  {
+    id: "s4",
+    bg: "/images/slider-img-3.jpg",
+    subtitle: "Natural Environment",
+    line1: "Be Safe Controls",
+    line2: "Environment",
+    desc: "Improve ecosystems with data-driven impact and sustainable actions.",
+    primary: { label: "Let’s Talk", href: "/contact" },
+  },
 ];

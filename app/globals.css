@@ -71,7 +71,7 @@ body {
 
   .nav-collapse {
     @apply overflow-hidden transition-[height] duration-300;
-    height: var(--menu-h, 0px);
+    height: 0;
   }
 
   /* Green wave band behind product cards */

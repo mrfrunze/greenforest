@@ -28,11 +28,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body 
         suppressHydrationWarning
-        className={`${albertSans.className} antialiased`}
+        className={`${albertSans.className} antialiased flex flex-col min-h-screen`}
       >
         <Loader/>
         <Header/>
-        <main>
+        <main className="flex-1">
           {children}
         </main>
         <Footer/>

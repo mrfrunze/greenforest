@@ -9,13 +9,9 @@ const Loader = () => {
     const handleLoad = () => {
       document.body.classList.add("loaded");
     };
+    const id = setTimeout(handleLoad, 100);
 
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    return () => clearTimeout(id);
   }, []);
 
   return (

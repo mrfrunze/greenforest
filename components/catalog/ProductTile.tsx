@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 type Props = {
   id: string;
@@ -33,36 +33,17 @@ export default function ProductTile({ title, price, image, href = "#" }: Props) 
             sizes="(min-width: 768px) 33vw, 100vw"
             priority={false}
           />
-          {/* action bar: mobile visible, desktop on hover */}
           <div className="pointer-events-none absolute inset-0 flex items-start justify-end p-3">
-            <div className="
-                pointer-events-auto flex gap-2 rounded-full bg-white/80 backdrop-blur
-                ring-1 ring-black/10
-                md:opacity-0 md:transition-opacity md:duration-300 md:group-hover:opacity-100
-            ">
-              {/* wishlist */}
-              <button
-                type="button"
-                className="
-                  inline-flex 
-                  h-9 
-                  w-9 
-                  items-center 
-                  justify-center 
-                  rounded-full text-[#001819] hover:text-[--color-primary] transition-colors"
-                aria-label="Add to wishlist"
-              >
-                <FaHeart className="text-[16px]" />
-              </button>
-              {/* add to cart */}
-              <button
-                type="button"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full text-[#001819] hover:text-[--color-primary] transition-colors"
-                aria-label="Add to cart"
-              >
-                <FaShoppingCart className="text-[16px]" />
-              </button>
-            </div>
+            <button
+              type="button"
+              className="
+                pointer-events-auto inline-flex h-9 w-9 items-center justify-center
+                rounded-full bg-white/80 backdrop-blur ring-1 ring-black/10
+                text-[--color-paragraph] transition-colors hover:text-[--color-primary]"
+              aria-label="Add to cart"
+            >
+              <FaShoppingCart className="text-[16px]" />
+            </button>
           </div>
         </div>
       </Link>
@@ -75,7 +56,9 @@ export default function ProductTile({ title, price, image, href = "#" }: Props) 
         </div>
 
         {/* price */}
-        <div className="mt-2 text-2xl font-semibold text-center">${price.toFixed(2)}</div>
+        <div className="mt-2 text-2xl font-semibold text-center text-[--color-paragraph]">
+          ${price.toFixed(2)}
+        </div>
       </div>
     </article>
   );

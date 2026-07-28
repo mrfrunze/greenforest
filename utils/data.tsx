@@ -72,4 +72,5 @@ export const products: ProductType[] = [
   { id: "1", title: "Venik 1", price: 150, image: "/images/photo_5.jpg" },
   { id: "2", title: "Green Venik 2", price: 75, image: "/images/photo_6.jpg" },
   { id: "3", title: "Leaf Venik 3",    price: 375, image: "/images/photo_4.jpg" },
+  { id: "4", title: "Green Venik 4", price: 75, image: "/images/photo_6.jpg" }
 ];

@@ -65,7 +65,7 @@ export default function Header() {
           <nav
             id="site-nav"
             className="nav-mobile nav-collapse md:justify-center md:static md:bg-transparent md:h-auto flex md:flex-row md:gap-8 md:p-0"
-            style={{ ["--menu-h" as any]: isOpen ? `${menuH}px` : "0px" }}
+            style={{ ["--menu-h" as any]: isOpen ? `${menuH}px` : "0px" } as React.CSSProperties}
           >
             <div ref={innerRef} className="flex flex-col items-center py-5 gap-5 md:flex-row md:gap-8 md:py-0">
               {navLinks.map((item, index) => (
